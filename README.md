@@ -11,10 +11,19 @@ Serveur to GET and POST news about the wwdc 2017
 
 
 ```
-soon
+npm install
 ```
 
-### Installing
+or
+
+```
+yarn install
+```
+
+Then create a database and init it with the dump.sql script.
+Change the db user/pass in server.js
+
+### Running
 
 ```
 npm start
@@ -26,10 +35,27 @@ or
 yarn start
 ```
 
+There is also a dev mode which reload the files automatically:
+
+```
+yarn dev
+```
+
 
 ## Deployment
 
-soon
+If you are using nginx you can do a simple reverse proxy:
+
+```
+server {
+listen 80;
+server_name exam.yourdomain.com;
+
+location / {
+  proxy_pass http://127.0.0.1:4242/;
+  }
+}
+```
 
 ## Subject 
 
